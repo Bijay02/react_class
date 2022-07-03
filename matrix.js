@@ -1,12 +1,25 @@
-var psum = 0;
-var ssum = 0;
+let psum = 0;
+let ssum = 0;
 matrix = [[1,0,5],[0,1,0],[0,0,1]];
-for (let i =0; i<matrix.length;i++){
+
+calc = (type)=>{
+    for (let i =0; i<matrix.length;i++){
     
-     psum += matrix[i][i];
-     ssum += matrix[i][matrix.length-1-i];
+         psum += matrix[i][i];
+        ssum += matrix[i][matrix.length-1-i];
     
 
+    }
+    if (type == "principal"){
+        return psum;
+    }else if (type == "secondary"){
+        return(ssum);
+    }else{
+        return "error";
+    }
 }
-console.log(psum);
-console.log(ssum);
+result = calc("secondary");
+console.log(result);
+
+
+
